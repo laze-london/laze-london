@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Laze — West London furniture restoration</title>
+  <meta name="description" content="Laze is a one-woman upholstery and furniture restoration studio in West London. Tired, beloved furniture brought back to life with patient craft and considered fabrics." />
+  <meta name="theme-color" content="#1B3620" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Laze — West London furniture restoration" />
+  <meta property="og:description" content="A one-woman studio bringing tired, beloved furniture back to life with patient craft and considered fabrics." />
+  <meta property="og:image" content="assets/hero-interior.svg" />
+
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fustat:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ============ NAVBAR ============ -->
+  <header class="navbar">
+    <div class="container nav-inner">
+      <a class="logo" href="#top" aria-label="Laze home">laze</a>
+
+      <nav class="nav-links" aria-label="Primary">
+        <div class="nav-item has-dropdown">
+          <button class="nav-link" aria-haspopup="true" aria-expanded="false">
+            services
+            <svg class="chevron" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <div class="dropdown" role="menu">
+            <a href="#services" role="menuitem">Upholstery</a>
+            <a href="#services" role="menuitem">Restoration</a>
+            <a href="#services" role="menuitem">Sourcing</a>
+          </div>
+        </div>
+        <a class="nav-link is-active" href="#about">furniture</a>
+        <a class="nav-link" href="#about">fabrics</a>
+        <a class="nav-link" href="#contact">contact</a>
+      </nav>
+
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+    <span id="top"></span>
+
+    <!-- ============ HERO ============ -->
+    <section class="hero">
+      <div class="container">
+        <p class="eyebrow">West London furniture restoration</p>
+        <div class="hero-body">
+          <h1 class="hero-headline">
+            A one-woman studio bringing tired, beloved furniture back to life with
+            patient craft and considered fabrics. Each piece stripped to the frame,
+            repaired with care, and finished to last.
+          </h1>
+          <div class="hero-media">
+            <img src="assets/hero-interior.svg" alt="A softly lit living room with reupholstered furniture" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ ABOUT ============ -->
+    <section class="about" id="about">
+      <div class="container about-inner">
+        <div class="about-media">
+          <img src="assets/about-heather.svg" alt="Heather in her West London upholstery studio" />
+        </div>
+        <div class="about-content">
+          <span class="tag" aria-hidden="true">✳</span>
+          <h2 class="h3">Hand-finished pieces, made to be lived with</h2>
+          <p class="lead">
+            I'm Heather, a one-person upholstery studio in West London. New Zealand
+            born, Scottish heritage, shaped by Barcelona and the UK—I bring these
+            influences into every piece I restore. Each chair, sofa, and frame gets
+            stripped back, repaired properly, and dressed in fabrics that will outlast
+            the years.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SERVICES ============ -->
+    <section class="services" id="services">
+      <div class="container">
+        <p class="tagline">Services</p>
+        <div class="services-grid">
+          <div class="services-list">
+            <a class="service" href="#contact" data-img="assets/service-upholstery.svg">
+              <span class="num num--green">01</span>
+              <span class="service-name name--green">Upholstery</span>
+            </a>
+            <a class="service" href="#contact" data-img="assets/service-restoration.svg">
+              <span class="num">02</span>
+              <span class="service-name">Furniture restoration</span>
+            </a>
+            <a class="service" href="#contact" data-img="assets/service-sourcing.svg">
+              <span class="num">03</span>
+              <span class="service-name">Furniture sourcing</span>
+            </a>
+          </div>
+          <div class="services-media">
+            <img id="serviceImg" src="assets/service-upholstery.svg" alt="Detail of upholstery work in progress" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section class="contact" id="contact">
+      <div class="container contact-inner">
+        <div class="section-title">
+          <h2 class="h2">Contact</h2>
+          <p class="contact-sub">Send a message about your piece. I'll get back to you within a few days.</p>
+        </div>
+
+        <form class="form" id="contactForm" novalidate>
+          <div class="form-row">
+            <div class="field">
+              <label for="firstName">First name</label>
+              <input type="text" id="firstName" name="firstName" autocomplete="given-name" />
+            </div>
+            <div class="field">
+              <label for="lastName">Last name</label>
+              <input type="text" id="lastName" name="lastName" autocomplete="family-name" />
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="field">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" autocomplete="email" required />
+            </div>
+            <div class="field">
+              <label for="phone">Phone number</label>
+              <input type="tel" id="phone" name="phone" autocomplete="tel" />
+            </div>
+          </div>
+          <div class="field">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="4" placeholder="Type your message…"></textarea>
+          </div>
+          <div class="form-actions">
+            <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+            <button type="submit" class="btn">Send</button>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-top">
+        <a class="logo logo--footer" href="#top" aria-label="Laze home">laze</a>
+        <div class="footer-right">
+          <nav class="footer-links" aria-label="Footer">
+            <a href="#services">Services</a>
+            <a href="#about">Fabrics</a>
+            <a href="#contact">Contact</a>
+          </nav>
+          <div class="social" aria-label="Social links">
+            <a href="#" aria-label="Facebook"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 10-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.2c-1.2 0-1.6.8-1.6 1.6V12h2.7l-.4 2.9h-2.3v7A10 10 0 0022 12z"/></svg></a>
+            <a href="#" aria-label="Instagram"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+            <a href="#" aria-label="X"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.9 2H22l-7.6 8.7L23 22h-7l-5.5-7.2L4.2 22H1l8.1-9.3L1 2h7.2l5 6.6L18.9 2zm-1.2 18h1.7L7.4 3.8H5.6L17.7 20z"/></svg></a>
+            <a href="#" aria-label="LinkedIn"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 110 5 2.5 2.5 0 010-5zM3 9h4v12H3zM9 9h3.8v1.7h.05c.53-1 1.8-2 3.7-2 4 0 4.7 2.6 4.7 6V21h-4v-5.3c0-1.3 0-3-1.8-3s-2.1 1.4-2.1 2.9V21H9z"/></svg></a>
+            <a href="#" aria-label="YouTube"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M23 12s0-3.2-.4-4.7a2.5 2.5 0 00-1.7-1.7C19.4 5.2 12 5.2 12 5.2s-7.4 0-8.9.4A2.5 2.5 0 001.4 7.3C1 8.8 1 12 1 12s0 3.2.4 4.7a2.5 2.5 0 001.7 1.7c1.5.4 8.9.4 8.9.4s7.4 0 8.9-.4a2.5 2.5 0 001.7-1.7C23 15.2 23 12 23 12zM9.8 15.3V8.7l5.7 3.3z"/></svg></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="divider"></div>
+        <div class="credits">
+          <span>© 2026 Laze. All rights reserved</span>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="#">Cookies Settings</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>

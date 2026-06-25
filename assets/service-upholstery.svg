@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="560" height="560" viewBox="0 0 560 560" role="img" aria-label="Upholstery detail">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#243A6A"/>
+      <stop offset="1" stop-color="#1B3620"/>
+    </linearGradient>
+  </defs>
+  <rect width="560" height="560" fill="url(#g)"/>
+  <g fill="none" stroke="#D8876E" stroke-opacity="0.14" stroke-width="1">
+    <line x1="-560" y1="0" x2="0" y2="560"/>
+    <line x1="-516" y1="0" x2="44" y2="560"/>
+    <line x1="-472" y1="0" x2="88" y2="560"/>
+    <line x1="-428" y1="0" x2="132" y2="560"/>
+    <line x1="-384" y1="0" x2="176" y2="560"/>
+    <line x1="-340" y1="0" x2="220" y2="560"/>
+    <line x1="-296" y1="0" x2="264" y2="560"/>
+    <line x1="-252" y1="0" x2="308" y2="560"/>
+    <line x1="-208" y1="0" x2="352" y2="560"/>
+    <line x1="-164" y1="0" x2="396" y2="560"/>
+    <line x1="-120" y1="0" x2="440" y2="560"/>
+    <line x1="-76" y1="0" x2="484" y2="560"/>
+    <line x1="-32" y1="0" x2="528" y2="560"/>
+    <line x1="12" y1="0" x2="572" y2="560"/>
+    <line x1="56" y1="0" x2="616" y2="560"/>
+    <line x1="100" y1="0" x2="660" y2="560"/>
+    <line x1="144" y1="0" x2="704" y2="560"/>
+    <line x1="188" y1="0" x2="748" y2="560"/>
+    <line x1="232" y1="0" x2="792" y2="560"/>
+    <line x1="276" y1="0" x2="836" y2="560"/>
+    <line x1="320" y1="0" x2="880" y2="560"/>
+    <line x1="364" y1="0" x2="924" y2="560"/>
+    <line x1="408" y1="0" x2="968" y2="560"/>
+    <line x1="452" y1="0" x2="1012" y2="560"/>
+    <line x1="496" y1="0" x2="1056" y2="560"/>
+    <line x1="540" y1="0" x2="1100" y2="560"/>
+  </g>
+  <text x="50%" y="50%" fill="#D8876E" fill-opacity="0.65" font-family="Fustat, system-ui, sans-serif"
+        font-size="20" font-weight="500" text-anchor="middle" dominant-baseline="middle">Upholstery detail</text>
+</svg>

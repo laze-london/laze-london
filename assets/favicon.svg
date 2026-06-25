@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64">
+  <rect width="64" height="64" rx="10" fill="#1B3620"/>
+  <text x="50%" y="54%" fill="#D8876E" font-family="Fustat, system-ui, sans-serif"
+        font-size="42" font-weight="800" letter-spacing="-2"
+        text-anchor="middle" dominant-baseline="central">l</text>
+</svg>
