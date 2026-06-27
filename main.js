@@ -10,11 +10,12 @@ if (navbar) {
 
   // The bar is position:fixed, so the page is offset down by its full-size
   // height (measured here, with --shrink forced to 0). Re-measure on resize.
+  const root = document.documentElement;
   const setNavOffset = () => {
-    const saved = navbar.style.getPropertyValue('--shrink');
-    navbar.style.setProperty('--shrink', '0');
-    document.documentElement.style.setProperty('--nav-offset', navbar.offsetHeight + 'px');
-    navbar.style.setProperty('--shrink', saved || '0');
+    const saved = root.style.getPropertyValue('--shrink');
+    root.style.setProperty('--shrink', '0');
+    root.style.setProperty('--nav-offset', navbar.offsetHeight + 'px');
+    root.style.setProperty('--shrink', saved || '0');
   };
   window.addEventListener('resize', setNavOffset, { passive: true });
 
@@ -22,7 +23,7 @@ if (navbar) {
   const update = () => {
     ticking = false;
     const p = Math.min(1, Math.max(0, window.scrollY / SHRINK_OVER));
-    navbar.style.setProperty('--shrink', p.toFixed(4));
+    root.style.setProperty('--shrink', p.toFixed(4));
   };
   window.addEventListener('scroll', () => {
     if (!ticking) {
