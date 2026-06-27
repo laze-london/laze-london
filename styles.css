@@ -317,7 +317,11 @@ main {
   z-index: 1;
   pointer-events: none;
   box-shadow: 0 30px 60px rgba(27, 54, 32, 0.25);
+  /* Hidden until a service is hovered; JS toggles .is-visible and swaps the img */
+  opacity: 0;
+  transition: opacity 0.35s var(--ease);
 }
+.services-media.is-visible { opacity: 1; }
 .services-media img {
   width: 100%;
   aspect-ratio: 1 / 1;

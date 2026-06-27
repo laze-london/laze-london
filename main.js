@@ -53,15 +53,26 @@ if (toggle && navLinks) {
   );
 }
 
-// Services: swap the preview image on hover/focus
+// Services: reveal the preview image only while a service is hovered/focused,
+// swapping to that service's own picture. Hidden otherwise.
 const serviceImg = document.getElementById('serviceImg');
+const serviceMedia = document.querySelector('.services-media');
+const serviceList = document.querySelector('.services-list');
 document.querySelectorAll('.service').forEach((el) => {
   const src = el.getAttribute('data-img');
   if (!src || !serviceImg) return;
-  const swap = () => { serviceImg.src = src; };
-  el.addEventListener('mouseenter', swap);
-  el.addEventListener('focus', swap);
+  const show = () => {
+    serviceImg.src = src;
+    if (serviceMedia) serviceMedia.classList.add('is-visible');
+  };
+  el.addEventListener('mouseenter', show);
+  el.addEventListener('focus', show);
 });
+const hide = () => serviceMedia && serviceMedia.classList.remove('is-visible');
+if (serviceList) {
+  serviceList.addEventListener('mouseleave', hide);
+  serviceList.addEventListener('focusout', hide);
+}
 
 // Contact form — no backend yet. Validate + show a friendly note.
 // To make this actually send, point `action` at a service like Formspree.
