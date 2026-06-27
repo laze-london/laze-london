@@ -805,3 +805,7 @@ a { color: inherit; text-decoration: none; }
   .svc-hero-media { flex-direction: column; gap: 24px; }
   .svc-hero-media__small { width: 65%; }
 }
+
+/* Leading price-tag icon marking the shop nav items (furniture / fabrics).
+   Inherits the nav link colour via currentColor (coral on dark, rust on light). */
+.nav-icon { flex: none; width: 16px; height: 16px; }

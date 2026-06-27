@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sancar chair — Laze</title>
-  <meta name="description" content="A restored Sancar chair from Laze — one-off, hand-finished, made to be lived with." />
+  <title>Upholstery — Laze</title>
+  <meta name="description" content="Upholstery by Laze — tired, beloved furniture stripped to the frame, repaired with care, and dressed in fabrics made to last." />
   <meta name="theme-color" content="#E0E5E0" />
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -43,81 +43,53 @@
   </header>
 
   <main id="main">
-    <!-- ============ PRODUCT ============ -->
-    <section class="pdp">
-      <div class="pdp-inner">
-        <nav class="breadcrumbs" aria-label="Breadcrumb">
-          <a href="furniture.html">Shop all</a>
-          <span class="sep" aria-hidden="true">›</span>
-          <a href="furniture.html">Category</a>
-          <span class="sep" aria-hidden="true">›</span>
-          <span class="current" aria-current="page">Sancar chair</span>
-        </nav>
-
-        <!-- Gallery -->
-        <div class="gallery">
-          <div class="gallery__main"><img src="assets/prod-a.svg" alt="Sancar chair, main view" /></div>
-          <div class="gallery__thumbs">
-            <div class="gallery__thumb"><img src="assets/prod-b.svg" alt="Sancar chair, detail" /></div>
-            <div class="gallery__thumb"><img src="assets/prod-c.svg" alt="Sancar chair, detail" /></div>
-            <div class="gallery__thumb"><img src="assets/prod-d.svg" alt="Sancar chair, detail" /></div>
-            <div class="gallery__thumb">
-              <img src="assets/prod-a.svg" alt="Sancar chair, detail" />
-              <a class="gallery__more" href="#">Show all photos</a>
-            </div>
-          </div>
+    <!-- ============ HEADER ============ -->
+    <section class="svc-section svc-header">
+      <div class="svc-inner">
+        <div class="svc-hero">
+          <div class="svc-hero__title"><h1 class="h1">Upholstery</h1></div>
+          <p class="svc-text svc-hero__intro">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.</p>
         </div>
+        <div class="svc-hero-media">
+          <div class="svc-hero-media__big"><img src="assets/prod-a.svg" alt="Reupholstered sofa, studio shot" /></div>
+          <div class="svc-hero-media__small"><img src="assets/prod-b.svg" alt="Upholstered chair detail" /></div>
+        </div>
+      </div>
+    </section>
 
-        <!-- Description + Buy -->
-        <div class="pdp-body">
-          <div class="pdp-desc">
-            <h1 class="h3">Sancar chair</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.</p>
-            <ul class="pdp-list">
-              <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-              <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-              <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-            </ul>
+    <!-- ============ INTRO + WIDE MEDIA ============ -->
+    <section class="svc-section">
+      <div class="svc-inner">
+        <div class="svc-intro">
+          <div class="svc-intro__heading"><h2 class="h2">Upholstery</h2></div>
+          <p class="svc-text svc-intro__text">Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla.</p>
+        </div>
+        <div class="svc-media-wide"><img src="assets/prod-c.svg" alt="Upholstery work in progress" /></div>
+      </div>
+    </section>
 
-            <div class="tabs">
-              <div class="tabs-menu" role="tablist">
-                <button class="tab is-active" data-tab="details" role="tab" aria-selected="true">Details</button>
-                <button class="tab" data-tab="shipping" role="tab" aria-selected="false">Shipping</button>
-                <button class="tab" data-tab="returns" role="tab" aria-selected="false">Returns</button>
-              </div>
-              <div class="tab-pane" data-pane="details">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet.</div>
-              <div class="tab-pane" data-pane="shipping" hidden>Carefully wrapped and delivered across the UK. Local West London delivery can be arranged directly — get in touch.</div>
-              <div class="tab-pane" data-pane="returns" hidden>Each piece is one-off and restored by hand. Returns are handled case by case — message me and we'll sort it out.</div>
-            </div>
+    <!-- ============ FEATURE: text + image ============ -->
+    <section class="svc-section">
+      <div class="svc-inner">
+        <div class="svc-feature">
+          <div class="svc-feature__text">
+            <h2 class="h2">Upholstery</h2>
+            <p class="svc-text">A one-woman studio bringing tired, beloved furniture back to life with patient craft, considered fabrics, and a touch of character.</p>
           </div>
+          <div class="svc-feature__media"><img src="assets/prod-d.svg" alt="Restored sofa" /></div>
+        </div>
+      </div>
+    </section>
 
-          <aside class="pdp-buy">
-            <p class="price">$55</p>
-            <div class="rating">
-              <span class="stars" style="--rating: 3.5" aria-hidden="true">★★★★★</span>
-              <span>(3.5 stars) • 10 reviews</span>
-            </div>
-
-            <div>
-              <p class="field-label">Variant</p>
-              <div class="variants" role="group" aria-label="Variant">
-                <button class="variant-opt is-selected" type="button">Option one</button>
-                <button class="variant-opt" type="button">Option Two</button>
-                <button class="variant-opt" type="button" disabled>Option Three</button>
-              </div>
-            </div>
-
-            <div>
-              <label class="field-label" for="qty">Quantity</label>
-              <input class="qty-input" id="qty" type="number" min="1" value="1" />
-            </div>
-
-            <div class="pdp-actions">
-              <button class="btn-cart" type="button" data-enquire>Add To Cart</button>
-              <button class="btn-buy" type="button" data-enquire>Buy Now</button>
-              <p class="ship-note">Free shipping over $50</p>
-            </div>
-          </aside>
+    <!-- ============ FEATURE: image + text (reversed) ============ -->
+    <section class="svc-section">
+      <div class="svc-inner">
+        <div class="svc-feature svc-feature--reverse">
+          <div class="svc-feature__text">
+            <h2 class="h2">Upholstery</h2>
+            <p class="svc-text">A one-woman studio bringing tired, beloved furniture back to life with patient craft, considered fabrics, and a touch of character.</p>
+          </div>
+          <div class="svc-feature__media"><img src="assets/prod-a.svg" alt="Restored chair" /></div>
         </div>
       </div>
     </section>
