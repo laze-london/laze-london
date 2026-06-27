@@ -7,8 +7,6 @@ import os
 
 # (filename, width, height, base hex, caption)
 PLACEHOLDERS = [
-    ("hero-interior.svg", 445, 488, "#2A3D2C", "Interior · living room"),
-    ("about-heather.svg", 644, 687, "#3A4038", "Heather at work"),
     ("service-upholstery.svg", 560, 560, "#243A6A", "Upholstery detail"),
     ("service-restoration.svg", 560, 560, "#4A3526", "Restoration"),
     ("service-sourcing.svg", 560, 560, "#3A4A3C", "Sourcing"),

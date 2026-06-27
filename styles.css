@@ -32,7 +32,7 @@ html { scroll-behavior: smooth; }
 
 body {
   margin: 0;
-  overflow-x: hidden;
+  overflow-x: clip;
   font-family: 'Fustat', system-ui, -apple-system, Segoe UI, sans-serif;
   background: var(--green);
   color: var(--coral);
@@ -79,8 +79,20 @@ a { color: inherit; text-decoration: none; }
 
 /* ============ NAVBAR ============ */
 .navbar {
+  position: sticky;
+  top: 0;
+  z-index: 50;
   background: var(--green);
   padding: var(--pad);
+  transition: padding 0.3s var(--ease);
+}
+/* Resized state once scrolled — green bar stays, logo scales down (GPU-smooth) */
+.navbar.is-compact {
+  padding-top: 22px;
+  padding-bottom: 22px;
+}
+.navbar.is-compact .logo {
+  font-size: 46px;
 }
 .nav-inner {
   display: flex;
@@ -205,10 +217,9 @@ a { color: inherit; text-decoration: none; }
   flex: 1 1 50%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   gap: 24px;
 }
-.tag { font-size: 26px; color: var(--rust); line-height: 1; }
 .about-content .h3 { color: var(--rust); }
 .lead {
   font-size: var(--h6);
@@ -419,7 +430,8 @@ a { color: inherit; text-decoration: none; }
 
 @media (max-width: 720px) {
   :root { --pad: 20px; }
-  .about, .services, .contact { padding: 72px var(--pad); }
+  .hero { padding: 64px var(--pad); }
+  .about, .services, .contact { padding: 64px var(--pad); }
   .nav-links {
     position: fixed;
     inset: 0 0 0 auto;
@@ -439,8 +451,42 @@ a { color: inherit; text-decoration: none; }
   .nav-toggle[aria-expanded="true"] span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
   .nav-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
   .nav-toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-  .form-row { flex-direction: column; gap: 24px; }
-  .eyebrow { margin-bottom: 48px; }
+  /* Hero — hierarchy swap: the eyebrow becomes the big headline,
+     the long studio line becomes small body copy, image goes square */
+  .eyebrow { font-size: 48px; line-height: 1.1; margin: 0 0 20px; }
+  .hero-body { flex-direction: column; align-items: flex-start; gap: 48px; }
+  .hero-headline { font-size: 14px; font-weight: 400; line-height: 1.5; }
+  .hero-media { width: 100%; max-width: none; }
+  .hero-media img { aspect-ratio: 1 / 1; }
+
+  /* About — text first, image below */
+  .about-inner { flex-direction: column; gap: 48px; }
+  .about-content { gap: 20px; }
+  .about-media { order: 2; }
+  .about-media img { aspect-ratio: 335 / 348; }
+  .lead { font-size: 18px; }
+
+  /* Services — no preview image on mobile; smaller numbers, set name size */
+  .tagline { font-size: 18px; margin-bottom: 0; }
+  .services-media { display: none; }
+  .service { padding: 20px 0; }
+  .service:hover { padding-left: 0; }
+  .num { font-size: 20px; }
+  .service-name { font-size: 48px; line-height: 1.1; }
+
+  /* Contact — first/last stay 2-up, email/phone go full width */
+  .contact .h2 { font-size: 44px; }
+  .contact-sub { font-size: 14px; }
+  .form-row--stack { flex-direction: column; gap: 24px; }
+  .form-actions { justify-content: center; }
+
+  /* Footer — everything stacks, left aligned */
+  .footer { padding: 48px var(--pad); }
+  .footer-top { flex-direction: column; align-items: flex-start; gap: 48px; }
+  .footer-right { flex-direction: column; align-items: flex-start; gap: 32px; width: 100%; }
+  .footer-links { flex-direction: column; gap: 16px; }
+  .credits { flex-direction: column; gap: 16px; }
+  .credits span { order: 2; }
 }
 
 @media (prefers-reduced-motion: reduce) {

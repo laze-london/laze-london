@@ -1,5 +1,13 @@
 // Laze homepage — small progressive-enhancement helpers.
 
+// Shrink the navbar (and recolour the logo) once the page is scrolled
+const navbar = document.querySelector('.navbar');
+if (navbar) {
+  const onScroll = () => navbar.classList.toggle('is-compact', window.scrollY > 60);
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+}
+
 // Mobile nav toggle
 const toggle = document.querySelector('.nav-toggle');
 const navLinks = document.querySelector('.nav-links');
