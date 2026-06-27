@@ -764,7 +764,9 @@ a { color: inherit; text-decoration: none; }
 }
 .svc-header .svc-inner { position: relative; z-index: 1; }
 
-.svc-hero { display: flex; gap: 80px; }
+/* Tall row so the H1 sits at the top-left and the intro drops to the
+   bottom-right (the spec staggers them via a 192px top padding on col 2). */
+.svc-hero { display: flex; gap: 80px; min-height: clamp(260px, 24vw, 336px); }
 .svc-hero__title { flex: 1 1 0; }
 .svc-hero__title .h1 { color: var(--rust); }
 .svc-hero__intro { flex: 1 1 0; align-self: flex-end; }
@@ -792,7 +794,7 @@ a { color: inherit; text-decoration: none; }
 .svc-feature__media img { width: 100%; height: 100%; object-fit: cover; }
 
 @media (max-width: 1024px) {
-  .svc-hero { flex-direction: column; gap: 32px; }
+  .svc-hero { flex-direction: column; gap: 32px; min-height: 0; }
   .svc-hero-media__big { margin-top: 0; }
   .svc-intro { flex-direction: column; gap: 24px; }
   .svc-feature, .svc-feature--reverse { flex-direction: column; gap: 32px; }
