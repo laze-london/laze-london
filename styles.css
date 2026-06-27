@@ -88,10 +88,11 @@ a { color: inherit; text-decoration: none; }
      identical rendering across browsers — no exotic CSS calc() to misparse. */
   padding: var(--pad);
 }
-/* Fixed bar overlays content; JS sets --nav-offset to its real height. */
-main {
-  margin-top: var(--nav-offset, 220px);
-}
+/* Fixed bar overlays content. Each page's first section owns its navbar
+   clearance via padding-top: calc(var(--nav-offset) + spacing). We avoid a
+   shared margin on <main> — it collapses through <body> and leaves a strip of
+   the green body background behind the (light) navbar, which some browsers
+   reveal as the bar shrinks. JS sets --nav-offset to the real navbar height. */
 .nav-inner {
   display: flex;
   justify-content: space-between;
@@ -172,7 +173,8 @@ main {
 /* ============ HERO ============ */
 .hero {
   background: var(--green);
-  padding: 0 var(--pad) 80px;
+  /* top padding clears the fixed navbar (no shared <main> margin — see navbar) */
+  padding: var(--nav-offset, 220px) var(--pad) 80px;
 }
 .eyebrow {
   font-size: var(--h5);
@@ -479,7 +481,7 @@ main {
 
 @media (max-width: 720px) {
   :root { --pad: 20px; }
-  .hero { padding: 64px var(--pad); }
+  .hero { padding: calc(var(--nav-offset, 110px) + 64px) var(--pad) 64px; }
   .about, .services, .contact { padding: 64px var(--pad); }
   .nav-links {
     position: fixed;
