@@ -94,7 +94,7 @@ a { color: inherit; text-decoration: none; }
 .nav-inner {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
   gap: 32px;
 }
 .nav-links {
