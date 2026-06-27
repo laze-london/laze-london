@@ -331,11 +331,26 @@ main {
 
 /* ============ CONTACT ============ */
 .contact {
+  position: relative;
+  overflow: hidden;
   background: var(--sage);
   color: var(--rust);
   padding: 112px var(--pad);
 }
+/* Faint leafy backdrop rising from the bottom. The source art is on white, so
+   multiply blend drops the white and leaves only the leaves over the sage. */
+.contact::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url(assets/contact-leaves.jpg) bottom center / 100% auto no-repeat;
+  mix-blend-mode: multiply;
+  pointer-events: none;
+  z-index: 0;
+}
 .contact-inner {
+  position: relative;
+  z-index: 1;
   display: flex;
   flex-direction: column;
   align-items: center;

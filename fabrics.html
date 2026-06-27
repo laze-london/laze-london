@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fustat:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=7" />
+  <link rel="stylesheet" href="styles.css?v=8" />
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -107,31 +107,8 @@
       </div>
     </section>
 
-    <!-- ============ CONTACT ============ -->
-    <section class="contact" id="contact">
-      <div class="container contact-inner">
-        <div class="section-title">
-          <h2 class="h2">Contact</h2>
-          <p class="contact-sub">Send a message about your piece. I'll get back to you within a few days.</p>
-        </div>
-
-        <form class="form" id="contactForm" novalidate>
-          <div class="form-row">
-            <div class="field"><label for="firstName">First name</label><input type="text" id="firstName" name="firstName" autocomplete="given-name" /></div>
-            <div class="field"><label for="lastName">Last name</label><input type="text" id="lastName" name="lastName" autocomplete="family-name" /></div>
-          </div>
-          <div class="form-row form-row--stack">
-            <div class="field"><label for="email">Email</label><input type="email" id="email" name="email" autocomplete="email" required /></div>
-            <div class="field"><label for="phone">Phone number</label><input type="tel" id="phone" name="phone" autocomplete="tel" /></div>
-          </div>
-          <div class="field"><label for="message">Message</label><textarea id="message" name="message" rows="4" placeholder="Type your message…"></textarea></div>
-          <div class="form-actions">
-            <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
-            <button type="submit" class="btn">Send</button>
-          </div>
-        </form>
-      </div>
-    </section>
+    <!-- Contact: global component injected by main.js -->
+    <div data-contact></div>
   </main>
 
   <!-- ============ FOOTER ============ -->
@@ -164,6 +141,6 @@
     </div>
   </footer>
 
-  <script src="main.js?v=7"></script>
+  <script src="main.js?v=8"></script>
 </body>
 </html>

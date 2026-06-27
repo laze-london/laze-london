@@ -1,5 +1,37 @@
 // Laze homepage — small progressive-enhancement helpers.
 
+// ===== Global contact component =====
+// One source of truth for the contact form. Injected wherever a page has
+// <div data-contact></div>, before the form handler below runs.
+(function injectContact() {
+  const mount = document.querySelector('[data-contact]');
+  if (!mount) return;
+  mount.outerHTML = `
+    <section class="contact" id="contact">
+      <div class="container contact-inner">
+        <div class="section-title">
+          <h2 class="h2">Contact</h2>
+          <p class="contact-sub">Send a message about your piece. I'll get back to you within a few days.</p>
+        </div>
+        <form class="form" id="contactForm" novalidate>
+          <div class="form-row">
+            <div class="field"><label for="firstName">First name</label><input type="text" id="firstName" name="firstName" autocomplete="given-name" /></div>
+            <div class="field"><label for="lastName">Last name</label><input type="text" id="lastName" name="lastName" autocomplete="family-name" /></div>
+          </div>
+          <div class="form-row form-row--stack">
+            <div class="field"><label for="email">Email</label><input type="email" id="email" name="email" autocomplete="email" required /></div>
+            <div class="field"><label for="phone">Phone number</label><input type="tel" id="phone" name="phone" autocomplete="tel" /></div>
+          </div>
+          <div class="field"><label for="message">Message</label><textarea id="message" name="message" rows="4" placeholder="Type your message…"></textarea></div>
+          <div class="form-actions">
+            <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+            <button type="submit" class="btn">Send</button>
+          </div>
+        </form>
+      </div>
+    </section>`;
+})();
+
 // Smoothly shrink the logo as you scroll. We map scroll position to a 0..1
 // progress var (`--shrink`) and let CSS calc() interpolate font-size/padding.
 // Because it's glued to scroll position (no CSS transition), it tracks the
