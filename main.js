@@ -74,6 +74,21 @@ if (serviceList) {
   serviceList.addEventListener('focusout', hide);
 }
 
+// Shop filters — show only products whose category matches the active tab.
+const filters = document.querySelectorAll('.filter');
+if (filters.length) {
+  const products = document.querySelectorAll('.product');
+  filters.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const f = btn.getAttribute('data-filter');
+      filters.forEach((b) => b.classList.toggle('is-active', b === btn));
+      products.forEach((p) => {
+        p.hidden = !(f === 'all' || p.getAttribute('data-category') === f);
+      });
+    });
+  });
+}
+
 // Contact form — no backend yet. Validate + show a friendly note.
 // To make this actually send, point `action` at a service like Formspree.
 const form = document.getElementById('contactForm');

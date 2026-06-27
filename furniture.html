@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shop furniture — Laze</title>
+  <meta name="description" content="One-off restored furniture from Laze — chairs, sofas and pieces brought back to life with patient craft and considered fabrics." />
+  <meta name="theme-color" content="#E0E5E0" />
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fustat:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css?v=7" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ============ NAVBAR (light) ============ -->
+  <header class="navbar navbar--light">
+    <div class="container nav-inner">
+      <a class="logo" href="index.html" aria-label="Laze home">laze</a>
+
+      <nav class="nav-links" aria-label="Primary">
+        <div class="nav-item has-dropdown">
+          <button class="nav-link" aria-haspopup="true" aria-expanded="false">
+            services
+            <svg class="chevron" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <div class="dropdown" role="menu">
+            <a href="index.html#services" role="menuitem">Upholstery</a>
+            <a href="index.html#services" role="menuitem">Restoration</a>
+            <a href="index.html#services" role="menuitem">Sourcing</a>
+          </div>
+        </div>
+        <a class="nav-link is-active" href="furniture.html">furniture</a>
+        <a class="nav-link" href="fabrics.html">fabrics</a>
+        <a class="nav-link" href="#contact">contact</a>
+      </nav>
+
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- ============ SHOP ============ -->
+    <section class="shop">
+      <div class="shop-inner">
+        <div class="shop-title">
+          <div>
+            <h1 class="h3">Shop furniture</h1>
+            <p class="shop-sub">A one-woman studio bringing tired, beloved furniture back to life with patient craft, considered fabrics, and a touch of character.</p>
+          </div>
+          <div class="filters" role="tablist" aria-label="Filter furniture">
+            <button class="filter is-active" data-filter="all">All</button>
+            <button class="filter" data-filter="chairs">Chairs</button>
+            <button class="filter" data-filter="sofas">Sofas</button>
+          </div>
+        </div>
+
+        <div class="product-grid">
+          <a class="product" href="#contact" data-category="sofas">
+            <div class="product__media"><img src="assets/prod-a.svg" alt="Restored sofa" /></div>
+            <div class="product__info">
+              <div class="product__header"><span class="product__name">Product name</span><span class="product__variant">Variant</span></div>
+              <span class="product__price">$55</span>
+            </div>
+          </a>
+          <a class="product" href="#contact" data-category="chairs">
+            <div class="product__media"><img src="assets/prod-b.svg" alt="Restored chair" /></div>
+            <div class="product__info">
+              <div class="product__header"><span class="product__name">Product name</span><span class="product__variant">Variant</span></div>
+              <span class="product__price">$55</span>
+            </div>
+          </a>
+          <div class="product" data-category="chairs">
+            <div class="product__media"><img src="assets/prod-c.svg" alt="Restored chair" /><span class="product__tag">Reserved</span></div>
+            <div class="product__info">
+              <div class="product__header"><span class="product__name">Product name</span><span class="product__variant">Variant</span></div>
+              <span class="product__price">$55</span>
+            </div>
+          </div>
+          <a class="product" href="#contact" data-category="chairs">
+            <div class="product__media"><img src="assets/prod-d.svg" alt="Restored chair" /></div>
+            <div class="product__info">
+              <div class="product__header"><span class="product__name">Product name</span><span class="product__variant">Variant</span></div>
+              <span class="product__price">$55</span>
+            </div>
+          </a>
+          <a class="product" href="#contact" data-category="sofas">
+            <div class="product__media"><img src="assets/prod-b.svg" alt="Restored sofa" /></div>
+            <div class="product__info">
+              <div class="product__header"><span class="product__name">Product name</span><span class="product__variant">Variant</span></div>
+              <span class="product__price">$55</span>
+            </div>
+          </a>
+          <a class="product" href="#contact" data-category="chairs">
+            <div class="product__media"><img src="assets/prod-a.svg" alt="Restored chair" /></div>
+            <div class="product__info">
+              <div class="product__header"><span class="product__name">Product name</span><span class="product__variant">Variant</span></div>
+              <span class="product__price">$55</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section class="contact" id="contact">
+      <div class="container contact-inner">
+        <div class="section-title">
+          <h2 class="h2">Contact</h2>
+          <p class="contact-sub">Send a message about your piece. I'll get back to you within a few days.</p>
+        </div>
+
+        <form class="form" id="contactForm" novalidate>
+          <div class="form-row">
+            <div class="field"><label for="firstName">First name</label><input type="text" id="firstName" name="firstName" autocomplete="given-name" /></div>
+            <div class="field"><label for="lastName">Last name</label><input type="text" id="lastName" name="lastName" autocomplete="family-name" /></div>
+          </div>
+          <div class="form-row form-row--stack">
+            <div class="field"><label for="email">Email</label><input type="email" id="email" name="email" autocomplete="email" required /></div>
+            <div class="field"><label for="phone">Phone number</label><input type="tel" id="phone" name="phone" autocomplete="tel" /></div>
+          </div>
+          <div class="field"><label for="message">Message</label><textarea id="message" name="message" rows="4" placeholder="Type your message…"></textarea></div>
+          <div class="form-actions">
+            <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+            <button type="submit" class="btn">Send</button>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-top">
+        <a class="logo logo--footer" href="index.html" aria-label="Laze home">laze</a>
+        <div class="footer-right">
+          <nav class="footer-links" aria-label="Footer">
+            <a href="index.html#services">Services</a>
+            <a href="fabrics.html">Fabrics</a>
+            <a href="#contact">Contact</a>
+          </nav>
+          <div class="social" aria-label="Social links">
+            <a href="https://www.instagram.com/laze.london/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+            <a href="https://www.linkedin.com/in/hniven/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 110 5 2.5 2.5 0 010-5zM3 9h4v12H3zM9 9h3.8v1.7h.05c.53-1 1.8-2 3.7-2 4 0 4.7 2.6 4.7 6V21h-4v-5.3c0-1.3 0-3-1.8-3s-2.1 1.4-2.1 2.9V21H9z"/></svg></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="divider"></div>
+        <div class="credits">
+          <span>© 2026 Laze. All rights reserved</span>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="#">Cookies Settings</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js?v=7"></script>
+</body>
+</html>
