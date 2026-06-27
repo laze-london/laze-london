@@ -7,6 +7,17 @@
 const navbar = document.querySelector('.navbar');
 if (navbar) {
   const SHRINK_OVER = 160; // px of scroll over which the logo goes full -> compact
+
+  // The bar is position:fixed, so the page is offset down by its full-size
+  // height (measured here, with --shrink forced to 0). Re-measure on resize.
+  const setNavOffset = () => {
+    const saved = navbar.style.getPropertyValue('--shrink');
+    navbar.style.setProperty('--shrink', '0');
+    document.documentElement.style.setProperty('--nav-offset', navbar.offsetHeight + 'px');
+    navbar.style.setProperty('--shrink', saved || '0');
+  };
+  window.addEventListener('resize', setNavOffset, { passive: true });
+
   let ticking = false;
   const update = () => {
     ticking = false;
@@ -19,6 +30,8 @@ if (navbar) {
       ticking = true;
     }
   }, { passive: true });
+
+  setNavOffset();
   update();
 }
 
