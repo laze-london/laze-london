@@ -1,11 +1,25 @@
 // Laze homepage — small progressive-enhancement helpers.
 
-// Shrink the navbar (and recolour the logo) once the page is scrolled
+// Smoothly shrink the logo as you scroll. We map scroll position to a 0..1
+// progress var (`--shrink`) and let CSS calc() interpolate font-size/padding.
+// Because it's glued to scroll position (no CSS transition), it tracks the
+// scroll 1:1 with no threshold snap. rAF-throttled so it stays at 60fps.
 const navbar = document.querySelector('.navbar');
 if (navbar) {
-  const onScroll = () => navbar.classList.toggle('is-compact', window.scrollY > 60);
-  window.addEventListener('scroll', onScroll, { passive: true });
-  onScroll();
+  const SHRINK_OVER = 160; // px of scroll over which the logo goes full -> compact
+  let ticking = false;
+  const update = () => {
+    ticking = false;
+    const p = Math.min(1, Math.max(0, window.scrollY / SHRINK_OVER));
+    navbar.style.setProperty('--shrink', p.toFixed(4));
+  };
+  window.addEventListener('scroll', () => {
+    if (!ticking) {
+      requestAnimationFrame(update);
+      ticking = true;
+    }
+  }, { passive: true });
+  update();
 }
 
 // Mobile nav toggle

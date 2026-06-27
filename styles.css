@@ -66,7 +66,10 @@ a { color: inherit; text-decoration: none; }
 /* ---------- Wordmark ---------- */
 .logo {
   font-weight: 800;
-  font-size: clamp(64px, 13vw, 168px);
+  /* Interpolate from the big responsive size down to 46px as --shrink goes 0->1.
+     font-size stays pixel-crisp at every step (unlike transform: scale). */
+  --logo-max: clamp(64px, 13vw, 168px);
+  font-size: calc(var(--logo-max) - (var(--logo-max) - 46px) * var(--shrink, 0));
   line-height: 0.9;
   letter-spacing: -0.04em;
   color: var(--coral);
@@ -83,16 +86,10 @@ a { color: inherit; text-decoration: none; }
   top: 0;
   z-index: 50;
   background: var(--green);
-  padding: var(--pad);
-  transition: padding 0.3s var(--ease);
-}
-/* Resized state once scrolled — green bar stays, logo scales down (GPU-smooth) */
-.navbar.is-compact {
-  padding-top: 22px;
-  padding-bottom: 22px;
-}
-.navbar.is-compact .logo {
-  font-size: 46px;
+  /* --shrink: 0 at the top, 1 once scrolled. JS sets it from scroll position
+     so size tracks scroll 1:1 — no threshold snap, no lagging transition. */
+  --shrink: 0;
+  padding: calc(var(--pad) - (var(--pad) - 18px) * var(--shrink));
 }
 .nav-inner {
   display: flex;
