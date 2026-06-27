@@ -69,6 +69,35 @@ if (navbar && logo) {
   update();
 }
 
+// About section: build the independent-swaying leaf strips. The artwork is
+// pre-sliced into vertical strips; each gets its own amplitude/duration/phase
+// so the plants drift apart instead of moving as one. Skipped for reduced motion.
+const aboutSection = document.querySelector('.about');
+if (aboutSection && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  const STRIPS = [
+    { img: 'assets/leaf-0.png', left: 0,     width: 23.82, amp: '1.3deg',  dur: '7.5s',  delay: '0s' },
+    { img: 'assets/leaf-1.png', left: 16.18, width: 27.64, amp: '1.9deg',  dur: '9s',    delay: '-3.2s' },
+    { img: 'assets/leaf-2.png', left: 36.18, width: 27.64, amp: '1.05deg', dur: '8.2s',  delay: '-1.5s' },
+    { img: 'assets/leaf-3.png', left: 56.18, width: 27.64, amp: '1.7deg',  dur: '10.5s', delay: '-4.6s' },
+    { img: 'assets/leaf-4.png', left: 76.18, width: 23.82, amp: '1.45deg', dur: '8.8s',  delay: '-2.3s' },
+  ];
+  const layer = document.createElement('div');
+  layer.className = 'about-leaves';
+  layer.setAttribute('aria-hidden', 'true');
+  STRIPS.forEach((s) => {
+    const el = document.createElement('span');
+    el.className = 'leaf';
+    el.style.left = s.left + '%';
+    el.style.width = s.width + '%';
+    el.style.backgroundImage = `url(${s.img})`;
+    el.style.setProperty('--amp', s.amp);
+    el.style.animationDuration = s.dur;
+    el.style.animationDelay = s.delay;
+    layer.appendChild(el);
+  });
+  aboutSection.insertBefore(layer, aboutSection.firstChild);
+}
+
 // Mobile nav toggle
 const toggle = document.querySelector('.nav-toggle');
 const navLinks = document.querySelector('.nav-links');

@@ -210,27 +210,28 @@ a { color: inherit; text-decoration: none; }
   color: var(--rust);
   padding: 112px var(--pad);
 }
-/* Faint leaves, on their own layer so they can drift like a soft breeze.
-   Pivot from the bottom so the stems stay planted and only the tips sway. */
-.about::before {
-  content: "";
+/* Faint leaves. The artwork is sliced into vertical strips (built by main.js),
+   each pivoting from its own base on its own clock — so the plants drift
+   independently like a soft breeze rather than swaying as one rigid sheet. */
+.about-leaves { position: absolute; inset: 0; z-index: 0; pointer-events: none; }
+.leaf {
   position: absolute;
-  /* slightly oversized so the sway never reveals the section edge */
-  top: -3%; bottom: 0; left: -5%;
-  width: 110%;
-  background: url(assets/bg-leaves.png) bottom center / 100% auto no-repeat;
+  top: -3%; bottom: 0;
+  background-repeat: no-repeat;
+  background-position: bottom center;
+  background-size: 100% auto;
   transform-origin: bottom center;
-  animation: leaf-sway 11s ease-in-out infinite;
-  pointer-events: none;
-  z-index: 0;
+  will-change: transform;
+  animation-name: leaf-sway;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
 }
 @keyframes leaf-sway {
-  0%   { transform: rotate(-1.6deg) scale(1); }
-  50%  { transform: rotate(1.6deg) scale(1.03); }
-  100% { transform: rotate(-1.6deg) scale(1); }
+  0%, 100% { transform: rotate(calc(-1 * var(--amp, 1.4deg))) scale(1); }
+  50%      { transform: rotate(var(--amp, 1.4deg)) scale(1.02); }
 }
 @media (prefers-reduced-motion: reduce) {
-  .about::before { animation: none; }
+  .leaf { animation: none; }
 }
 .about-inner {
   position: relative;
