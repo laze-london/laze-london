@@ -214,16 +214,19 @@ main {
 .about::before {
   content: "";
   position: absolute;
-  inset: 0;
+  /* slightly oversized so the sway never reveals the section edge */
+  top: -3%; bottom: 0; left: -5%;
+  width: 110%;
   background: url(assets/bg-leaves.png) bottom center / 100% auto no-repeat;
   transform-origin: bottom center;
-  animation: leaf-sway 16s ease-in-out infinite;
+  animation: leaf-sway 11s ease-in-out infinite;
   pointer-events: none;
   z-index: 0;
 }
 @keyframes leaf-sway {
-  0%, 100% { transform: rotate(-0.45deg); }
-  50%      { transform: rotate(0.45deg); }
+  0%   { transform: rotate(-1.6deg) scale(1); }
+  50%  { transform: rotate(1.6deg) scale(1.03); }
+  100% { transform: rotate(-1.6deg) scale(1); }
 }
 @media (prefers-reduced-motion: reduce) {
   .about::before { animation: none; }

@@ -19,18 +19,15 @@ if (navbar) {
   };
   window.addEventListener('resize', setNavOffset, { passive: true });
 
-  let ticking = false;
+  // Update directly on each scroll event. Setting one custom property is
+  // cheap, and the browser already throttles scroll to ~frame rate — doing it
+  // inline avoids requestAnimationFrame, which can be throttled and leave the
+  // logo stuck at full size (the bug that made it "disappear" under the bar).
   const update = () => {
-    ticking = false;
     const p = Math.min(1, Math.max(0, window.scrollY / SHRINK_OVER));
     root.style.setProperty('--shrink', p.toFixed(4));
   };
-  window.addEventListener('scroll', () => {
-    if (!ticking) {
-      requestAnimationFrame(update);
-      ticking = true;
-    }
-  }, { passive: true });
+  window.addEventListener('scroll', update, { passive: true });
 
   setNavOffset();
   update();
