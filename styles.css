@@ -127,22 +127,27 @@ main {
 
 .dropdown {
   position: absolute;
-  top: calc(100% + 10px);
+  top: calc(100% + 6px);
   left: 0;
-  background: var(--sage);
-  padding: 20px 24px;
+  padding: 24px 0;
   display: flex;
   flex-direction: column;
-  gap: 14px;
-  min-width: 150px;
+  align-items: flex-start;
+  gap: 16px;
+  min-width: 166px;
   opacity: 0;
   visibility: hidden;
   transform: translateY(-6px);
   transition: all 0.2s var(--ease);
   z-index: 20;
 }
-.dropdown a { color: var(--rust); font-size: var(--body); }
-.dropdown a:hover { color: var(--green); }
+.dropdown a {
+  color: var(--coral);
+  font-size: var(--body);
+  font-weight: 500;
+  white-space: nowrap;
+}
+.dropdown a:hover { color: var(--cream); }
 .has-dropdown:hover .dropdown,
 .has-dropdown:focus-within .dropdown {
   opacity: 1;
