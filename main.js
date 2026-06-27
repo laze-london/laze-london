@@ -5,31 +5,35 @@
 // Because it's glued to scroll position (no CSS transition), it tracks the
 // scroll 1:1 with no threshold snap. rAF-throttled so it stays at 60fps.
 const navbar = document.querySelector('.navbar');
-if (navbar) {
+const logo = navbar && navbar.querySelector('.logo');
+if (navbar && logo) {
+  const eyebrow = document.querySelector('.eyebrow');
   const SHRINK_OVER = 160; // px of scroll over which the logo goes full -> compact
+  const SMALL_FONT = 46, SMALL_PAD = 18;
+  let bigFont = 168, bigPad = 36;
 
-  // The bar is position:fixed, so the page is offset down by its full-size
-  // height (measured here, with --shrink forced to 0). Re-measure on resize.
-  const root = document.documentElement;
-  const setNavOffset = () => {
-    const saved = root.style.getPropertyValue('--shrink');
-    root.style.setProperty('--shrink', '0');
-    root.style.setProperty('--nav-offset', navbar.offsetHeight + 'px');
-    root.style.setProperty('--shrink', saved || '0');
+  // Read the full-size values straight from CSS (responsive clamp / --pad),
+  // then offset the page by the bar's full height. Everything below is plain
+  // arithmetic applied as inline styles — no CSS calc(), so it renders the same
+  // in every browser (Chrome, Comet, Safari, ...). Re-measure on resize.
+  const measure = () => {
+    logo.style.fontSize = '';
+    navbar.style.paddingTop = navbar.style.paddingBottom = '';
+    bigFont = parseFloat(getComputedStyle(logo).fontSize) || 168;
+    bigPad = parseFloat(getComputedStyle(navbar).paddingTop) || 36;
+    document.documentElement.style.setProperty('--nav-offset', navbar.offsetHeight + 'px');
   };
-  window.addEventListener('resize', setNavOffset, { passive: true });
-
-  // Update directly on each scroll event. Setting one custom property is
-  // cheap, and the browser already throttles scroll to ~frame rate — doing it
-  // inline avoids requestAnimationFrame, which can be throttled and leave the
-  // logo stuck at full size (the bug that made it "disappear" under the bar).
   const update = () => {
     const p = Math.min(1, Math.max(0, window.scrollY / SHRINK_OVER));
-    root.style.setProperty('--shrink', p.toFixed(4));
+    logo.style.fontSize = (bigFont - (bigFont - SMALL_FONT) * p).toFixed(2) + 'px';
+    const pad = (bigPad - (bigPad - SMALL_PAD) * p).toFixed(2) + 'px';
+    navbar.style.paddingTop = pad;
+    navbar.style.paddingBottom = pad;
+    if (eyebrow) eyebrow.style.opacity = Math.max(0, 1 - p * 1.25).toFixed(3);
   };
   window.addEventListener('scroll', update, { passive: true });
-
-  setNavOffset();
+  window.addEventListener('resize', () => { measure(); update(); }, { passive: true });
+  measure();
   update();
 }
 

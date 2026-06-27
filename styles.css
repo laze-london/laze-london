@@ -28,7 +28,7 @@
 
 * { box-sizing: border-box; }
 
-html { scroll-behavior: smooth; --shrink: 0; } /* scroll progress 0..1, set by JS */
+html { scroll-behavior: smooth; }
 
 body {
   margin: 0;
@@ -65,10 +65,7 @@ a { color: inherit; text-decoration: none; }
 /* ---------- Wordmark ---------- */
 .logo {
   font-weight: 800;
-  /* Interpolate from the big responsive size down to 46px as --shrink goes 0->1.
-     font-size stays pixel-crisp at every step (unlike transform: scale). */
-  --logo-max: clamp(64px, 13vw, 168px);
-  font-size: calc(var(--logo-max) - (var(--logo-max) - 46px) * var(--shrink, 0));
+  font-size: clamp(64px, 13vw, 168px); /* full size; JS shrinks it on scroll */
   line-height: 0.9;
   letter-spacing: -0.04em;
   color: var(--coral);
@@ -87,14 +84,13 @@ a { color: inherit; text-decoration: none; }
   right: 0;
   z-index: 50;
   background: var(--green);
-  /* --shrink (0 top -> 1 scrolled) is set on <html> by JS so size tracks
-     scroll 1:1 — no threshold snap, no lagging transition. */
-  padding: calc(var(--pad) - (var(--pad) - 18px) * var(--shrink));
+  /* Padding + logo size are driven from JS as inline styles (see main.js) for
+     identical rendering across browsers — no exotic CSS calc() to misparse. */
+  padding: var(--pad);
 }
-/* The fixed bar overlays content, so push the page down by its at-rest height.
-   --nav-offset is measured by JS; the calc() is the pre-JS fallback. */
+/* Fixed bar overlays content; JS sets --nav-offset to its real height. */
 main {
-  margin-top: var(--nav-offset, calc(2 * var(--pad) + 0.9 * clamp(64px, 13vw, 168px)));
+  margin-top: var(--nav-offset, 220px);
 }
 .nav-inner {
   display: flex;
@@ -180,9 +176,7 @@ main {
   letter-spacing: -0.01em;
   color: var(--coral);
   margin: 0 0 96px;
-  /* Soft-fade out as it scrolls up toward the fixed bar, instead of a hard
-     clip at the bar's edge. Gone by ~0.8 progress, just before it's covered. */
-  opacity: calc(1 - var(--shrink) * 1.25);
+  /* JS fades this out on scroll (inline opacity) so it doesn't hard-clip. */
 }
 .hero-body {
   display: flex;
