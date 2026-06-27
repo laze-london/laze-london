@@ -121,6 +121,42 @@ if (filters.length) {
   });
 }
 
+// Product page: tabs (Details / Shipping / Returns)
+document.querySelectorAll('.tabs').forEach((tabs) => {
+  const menu = [...tabs.querySelectorAll('.tab')];
+  const panes = [...tabs.querySelectorAll('.tab-pane')];
+  menu.forEach((tab) => {
+    tab.addEventListener('click', () => {
+      const name = tab.getAttribute('data-tab');
+      menu.forEach((t) => {
+        const on = t === tab;
+        t.classList.toggle('is-active', on);
+        t.setAttribute('aria-selected', String(on));
+      });
+      panes.forEach((p) => { p.hidden = p.getAttribute('data-pane') !== name; });
+    });
+  });
+});
+
+// Product page: variant selection
+document.querySelectorAll('.variants').forEach((group) => {
+  const opts = [...group.querySelectorAll('.variant-opt')];
+  opts.forEach((opt) => {
+    opt.addEventListener('click', () => {
+      if (opt.disabled) return;
+      opts.forEach((o) => o.classList.toggle('is-selected', o === opt));
+    });
+  });
+});
+
+// Add to Cart / Buy Now — no store yet, so send the visitor to the contact form.
+document.querySelectorAll('[data-enquire]').forEach((btn) => {
+  btn.addEventListener('click', () => {
+    const c = document.getElementById('contact');
+    if (c) c.scrollIntoView({ behavior: 'smooth' });
+  });
+});
+
 // Contact form — no backend yet. Validate + show a friendly note.
 // To make this actually send, point `action` at a service like Formspree.
 const form = document.getElementById('contactForm');
