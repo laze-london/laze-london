@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reupholstery — Laze</title>
+  <meta name="description" content="Reupholstery by Laze — tired, beloved furniture stripped to the frame, repaired with care, and dressed in fabrics made to last." />
+  <meta name="theme-color" content="#E0E5E0" />
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fustat:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css?v=10" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ============ NAVBAR (light) ============ -->
+  <header class="navbar navbar--light">
+    <div class="container nav-inner">
+      <a class="logo" href="index.html" aria-label="Laze home">laze</a>
+      <nav class="nav-links" aria-label="Primary">
+        <div class="nav-item has-dropdown">
+          <button class="nav-link" aria-haspopup="true" aria-expanded="false">
+            services
+            <svg class="chevron" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <div class="dropdown" role="menu">
+            <a href="service.html" role="menuitem">Upholstery</a>
+            <a href="service.html" role="menuitem">Restoration</a>
+            <a href="service.html" role="menuitem">Sourcing</a>
+          </div>
+        </div>
+        <a class="nav-link" href="furniture.html">furniture</a>
+        <a class="nav-link" href="fabrics.html">fabrics</a>
+        <a class="nav-link" href="#contact">contact</a>
+      </nav>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- ============ HEADER ============ -->
+    <section class="svc-section svc-header">
+      <div class="svc-inner">
+        <div class="svc-hero">
+          <div class="svc-hero__title"><h1 class="h1">Reupholstery</h1></div>
+          <p class="svc-text svc-hero__intro">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.</p>
+        </div>
+        <div class="svc-hero-media">
+          <div class="svc-hero-media__big"><img src="assets/prod-a.svg" alt="Reupholstered sofa, studio shot" /></div>
+          <div class="svc-hero-media__small"><img src="assets/prod-b.svg" alt="Upholstered chair detail" /></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ INTRO + WIDE MEDIA ============ -->
+    <section class="svc-section">
+      <div class="svc-inner">
+        <div class="svc-intro">
+          <div class="svc-intro__heading"><h2 class="h2">Reupholstery</h2></div>
+          <p class="svc-text svc-intro__text">Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla.</p>
+        </div>
+        <div class="svc-media-wide"><img src="assets/prod-c.svg" alt="Upholstery work in progress" /></div>
+      </div>
+    </section>
+
+    <!-- ============ FEATURE: text + image ============ -->
+    <section class="svc-section">
+      <div class="svc-inner">
+        <div class="svc-feature">
+          <div class="svc-feature__text">
+            <h2 class="h2">Reupholstery</h2>
+            <p class="svc-text">A one-woman studio bringing tired, beloved furniture back to life with patient craft, considered fabrics, and a touch of character.</p>
+          </div>
+          <div class="svc-feature__media"><img src="assets/prod-d.svg" alt="Restored sofa" /></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FEATURE: image + text (reversed) ============ -->
+    <section class="svc-section">
+      <div class="svc-inner">
+        <div class="svc-feature svc-feature--reverse">
+          <div class="svc-feature__text">
+            <h2 class="h2">Reupholstery</h2>
+            <p class="svc-text">A one-woman studio bringing tired, beloved furniture back to life with patient craft, considered fabrics, and a touch of character.</p>
+          </div>
+          <div class="svc-feature__media"><img src="assets/prod-a.svg" alt="Restored chair" /></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact: global component injected by main.js -->
+    <div data-contact></div>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-top">
+        <a class="logo logo--footer" href="index.html" aria-label="Laze home">laze</a>
+        <div class="footer-right">
+          <nav class="footer-links" aria-label="Footer">
+            <a href="index.html#services">Services</a>
+            <a href="furniture.html">Furniture</a>
+            <a href="#contact">Contact</a>
+          </nav>
+          <div class="social" aria-label="Social links">
+            <a href="https://www.instagram.com/laze.london/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+            <a href="https://www.linkedin.com/in/hniven/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 110 5 2.5 2.5 0 010-5zM3 9h4v12H3zM9 9h3.8v1.7h.05c.53-1 1.8-2 3.7-2 4 0 4.7 2.6 4.7 6V21h-4v-5.3c0-1.3 0-3-1.8-3s-2.1 1.4-2.1 2.9V21H9z"/></svg></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="divider"></div>
+        <div class="credits">
+          <span>© 2026 Laze. All rights reserved</span>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="#">Cookies Settings</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js?v=10"></script>
+</body>
+</html>

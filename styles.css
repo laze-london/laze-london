@@ -743,3 +743,61 @@ main {
   .gallery { grid-template-columns: 1fr; }
   .gallery__thumbs { grid-template-columns: 1fr 1fr; }
 }
+
+/* ============================================================
+   SERVICE DETAIL PAGE (service.html)
+   ============================================================ */
+.h1 { font-size: var(--h1); font-weight: 500; line-height: 1.1; letter-spacing: -0.01em; margin: 0; }
+
+.svc-section { background: var(--sage); color: var(--rust); padding: 112px var(--pad); }
+.svc-inner { max-width: var(--container); margin-inline: auto; display: flex; flex-direction: column; gap: 80px; }
+.svc-text { font-size: var(--h6); font-weight: 500; line-height: 1.4; letter-spacing: -0.01em; margin: 0; }
+
+/* Header: title + intro, then two offset images, over a faint leaf wash */
+.svc-header { position: relative; overflow: hidden; padding-top: calc(var(--nav-offset, 220px) + 100px); }
+.svc-header::before {
+  content: ""; position: absolute; inset: 0;
+  background: url(assets/contact-leaves.jpg) top center / cover no-repeat;
+  mix-blend-mode: multiply; opacity: 0.85; pointer-events: none; z-index: 0;
+}
+.svc-header .svc-inner { position: relative; z-index: 1; }
+
+.svc-hero { display: flex; gap: 80px; }
+.svc-hero__title { flex: 1 1 0; }
+.svc-hero__title .h1 { color: var(--rust); }
+.svc-hero__intro { flex: 1 1 0; align-self: flex-end; }
+
+.svc-hero-media { display: flex; gap: 64px; align-items: flex-start; }
+.svc-hero-media__big { flex: 1 1 0; margin-top: 80px; aspect-ratio: 1004 / 693; }
+.svc-hero-media__small { flex: none; width: clamp(180px, 22vw, 300px); aspect-ratio: 300 / 450; }
+.svc-hero-media__big, .svc-hero-media__small { overflow: hidden; background: #d9d7d1; }
+.svc-hero-media img { width: 100%; height: 100%; object-fit: cover; }
+
+/* Intro block + wide media */
+.svc-intro { display: flex; gap: 80px; align-items: flex-start; }
+.svc-intro__heading { flex: 1 1 0; }
+.svc-intro__heading .h2 { color: var(--rust); }
+.svc-intro__text { flex: 1 1 0; }
+.svc-media-wide { aspect-ratio: 1368 / 789; overflow: hidden; background: #d9d7d1; }
+.svc-media-wide img { width: 100%; height: 100%; object-fit: cover; }
+
+/* Alternating feature rows */
+.svc-feature { display: flex; gap: 80px; align-items: center; }
+.svc-feature--reverse { flex-direction: row-reverse; }
+.svc-feature__text { flex: 1 1 0; display: flex; flex-direction: column; gap: 24px; }
+.svc-feature__text .h2 { color: var(--rust); }
+.svc-feature__media { flex: 1 1 0; aspect-ratio: 644 / 687; overflow: hidden; background: #d9d7d1; }
+.svc-feature__media img { width: 100%; height: 100%; object-fit: cover; }
+
+@media (max-width: 1024px) {
+  .svc-hero { flex-direction: column; gap: 32px; }
+  .svc-hero-media__big { margin-top: 0; }
+  .svc-intro { flex-direction: column; gap: 24px; }
+  .svc-feature, .svc-feature--reverse { flex-direction: column; gap: 32px; }
+}
+@media (max-width: 720px) {
+  .svc-section { padding: 64px var(--pad); }
+  .svc-header { padding-top: calc(var(--nav-offset, 110px) + 48px); }
+  .svc-hero-media { flex-direction: column; gap: 24px; }
+  .svc-hero-media__small { width: 65%; }
+}
