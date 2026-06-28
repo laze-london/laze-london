@@ -881,50 +881,51 @@ a { color: inherit; text-decoration: none; }
 }
 
 /* ============================================================
-   Cookie consent banner (consent.js). Brand-coloured card fixed
-   to the bottom; readable over both the dark home and light pages.
-   Accept / Reject are styled identically for equal prominence.
+   Cookie consent (consent.js). A small, unobtrusive card tucked
+   into the bottom-left corner (Stripe / Linear style) rather than
+   a full-width bar. Accept / Reject are the same size for equal
+   prominence (PECR), with the quieter palette doing the softening.
    ============================================================ */
 .cc-banner {
   position: fixed;
-  left: 0; right: 0; bottom: 0;
+  left: 24px; bottom: 24px;
   z-index: 1000;
-  background: var(--green);
-  color: var(--coral);
-  border-top: 1px solid rgba(216, 135, 110, 0.35);
-  box-shadow: 0 -8px 30px rgba(0, 0, 0, 0.25);
-  padding: 20px var(--pad);
+  width: calc(100% - 48px);
+  max-width: 360px;
+  background: #fbfaf7;
+  color: var(--rust);
+  border: 1px solid rgba(27, 54, 32, 0.12);
+  border-radius: 12px;
+  box-shadow: 0 8px 28px rgba(27, 54, 32, 0.14);
+  padding: 20px;
+  animation: cc-in 0.35s var(--ease) both;
 }
-.cc-inner {
-  width: 100%;
-  max-width: var(--container);
-  margin-inline: auto;
-  display: flex;
-  align-items: center;
-  gap: 28px;
+@keyframes cc-in {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: none; }
 }
-.cc-text { flex: 1 1 auto; }
-.cc-title { margin: 0 0 6px; font-size: var(--body-md); font-weight: 700; }
-.cc-desc { margin: 0; font-size: var(--body-sm); line-height: 1.55; max-width: 760px; }
-.cc-desc a { text-decoration: underline; text-underline-offset: 2px; }
-.cc-desc a:hover { opacity: 0.75; }
-.cc-actions { flex: none; display: flex; gap: 12px; }
+.cc-inner { display: flex; flex-direction: column; gap: 14px; }
+.cc-title { margin: 0; font-size: var(--body-sm); font-weight: 700; color: var(--green); }
+.cc-desc { margin: 0; font-size: 13.5px; line-height: 1.5; }
+.cc-desc a { color: var(--rust); text-decoration: underline; text-underline-offset: 2px; }
+.cc-desc a:hover { opacity: 0.7; }
+.cc-actions { display: flex; gap: 10px; }
 .cc-btn {
-  flex: none;
-  min-width: 120px;
-  padding: 12px 24px;
+  flex: 1 1 0;
+  padding: 9px 14px;
   font-family: inherit;
-  font-size: var(--body-sm);
-  font-weight: 700;
-  color: var(--green);
-  background: var(--coral);
-  border: 1px solid var(--coral);
-  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 600;
+  border: 1px solid var(--green);
+  border-radius: 8px;
   cursor: pointer;
 }
-.cc-btn:hover { background: var(--rust); border-color: var(--rust); color: var(--sage); }
-.cc-btn:focus-visible { outline: 3px solid #fff; outline-offset: 2px; }
+.cc-btn[data-consent="accepted"] { color: #fbfaf7; background: var(--green); }
+.cc-btn[data-consent="rejected"] { color: var(--green); background: transparent; }
+.cc-btn:hover { background: var(--rust); border-color: var(--rust); color: #fbfaf7; }
+.cc-btn:focus-visible { outline: 2px solid var(--green); outline-offset: 2px; }
 .cc-banner:focus-visible { outline: none; }
+@media (prefers-reduced-motion: reduce) { .cc-banner { animation: none; } }
 
 /* Footer "Cookie settings" re-opener — a button that matches the credit links */
 .credits button {
@@ -938,8 +939,6 @@ a { color: inherit; text-decoration: none; }
 }
 .credits button:hover { opacity: 0.7; }
 
-@media (max-width: 720px) {
-  .cc-inner { flex-direction: column; align-items: stretch; gap: 16px; }
-  .cc-actions { width: 100%; }
-  .cc-btn { flex: 1 1 0; }
+@media (max-width: 480px) {
+  .cc-banner { left: 16px; right: 16px; bottom: 16px; width: auto; max-width: none; }
 }
