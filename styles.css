@@ -879,3 +879,67 @@ a { color: inherit; text-decoration: none; }
   border-radius: 4px;
   white-space: nowrap;
 }
+
+/* ============================================================
+   Cookie consent banner (consent.js). Brand-coloured card fixed
+   to the bottom; readable over both the dark home and light pages.
+   Accept / Reject are styled identically for equal prominence.
+   ============================================================ */
+.cc-banner {
+  position: fixed;
+  left: 0; right: 0; bottom: 0;
+  z-index: 1000;
+  background: var(--green);
+  color: var(--coral);
+  border-top: 1px solid rgba(216, 135, 110, 0.35);
+  box-shadow: 0 -8px 30px rgba(0, 0, 0, 0.25);
+  padding: 20px var(--pad);
+}
+.cc-inner {
+  width: 100%;
+  max-width: var(--container);
+  margin-inline: auto;
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+.cc-text { flex: 1 1 auto; }
+.cc-title { margin: 0 0 6px; font-size: var(--body-md); font-weight: 700; }
+.cc-desc { margin: 0; font-size: var(--body-sm); line-height: 1.55; max-width: 760px; }
+.cc-desc a { text-decoration: underline; text-underline-offset: 2px; }
+.cc-desc a:hover { opacity: 0.75; }
+.cc-actions { flex: none; display: flex; gap: 12px; }
+.cc-btn {
+  flex: none;
+  min-width: 120px;
+  padding: 12px 24px;
+  font-family: inherit;
+  font-size: var(--body-sm);
+  font-weight: 700;
+  color: var(--green);
+  background: var(--coral);
+  border: 1px solid var(--coral);
+  border-radius: 4px;
+  cursor: pointer;
+}
+.cc-btn:hover { background: var(--rust); border-color: var(--rust); color: var(--sage); }
+.cc-btn:focus-visible { outline: 3px solid #fff; outline-offset: 2px; }
+.cc-banner:focus-visible { outline: none; }
+
+/* Footer "Cookie settings" re-opener — a button that matches the credit links */
+.credits button {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  text-decoration: underline;
+}
+.credits button:hover { opacity: 0.7; }
+
+@media (max-width: 720px) {
+  .cc-inner { flex-direction: column; align-items: stretch; gap: 16px; }
+  .cc-actions { width: 100%; }
+  .cc-btn { flex: 1 1 0; }
+}
