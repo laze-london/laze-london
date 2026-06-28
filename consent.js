@@ -85,9 +85,8 @@
         '<div class="cc-text">' +
           '<p class="cc-title" id="cc-title">Cookies on laze.london</p>' +
           '<p class="cc-desc" id="cc-desc">We use essential cookies to make this ' +
-          'site work. With your consent, we’d also like to use Google Analytics ' +
-          'to understand how the site is used so we can improve it. See our ' +
-          '<a href="/cookies">Cookie Policy</a> and ' +
+          'site work and, with your consent, analytics cookies to understand how ' +
+          'it’s used. See our <a href="/cookies">Cookie Policy</a> and ' +
           '<a href="/privacy">Privacy Policy</a>.</p>' +
         '</div>' +
         '<div class="cc-actions">' +
