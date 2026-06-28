@@ -5,8 +5,8 @@
 
 :root {
   /* Palette */
-  --green: #2C403C;   /* deep teal-green — dark sections */
-  --coral: #C2A4A8;   /* dusky mauve — text on dark */
+  --green: #1B3620;   /* dark forest — dark sections */
+  --coral: #D8876E;   /* terracotta — text on dark */
   --rust:  #AC6C58;   /* warm brown — text on light */
   --sage:  #E0E5E0;   /* light sage — light sections */
   --cream: #E0E5E0;   /* highlighted nav item */
