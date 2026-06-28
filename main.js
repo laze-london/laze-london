@@ -74,12 +74,11 @@ if (navbar && logo) {
 // so the plants drift apart instead of moving as one. Skipped for reduced motion.
 const aboutSection = document.querySelector('.about');
 if (aboutSection && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  // Two halves split at the empty middle gap, each on its own clock so the
+  // left and right plants drift independently (no overlap = no double-lines).
   const STRIPS = [
-    { img: 'assets/leaf-0.png', left: 0,     width: 23.82, amp: '1.3deg',  dur: '7.5s',  delay: '0s' },
-    { img: 'assets/leaf-1.png', left: 16.18, width: 27.64, amp: '1.9deg',  dur: '9s',    delay: '-3.2s' },
-    { img: 'assets/leaf-2.png', left: 36.18, width: 27.64, amp: '1.05deg', dur: '8.2s',  delay: '-1.5s' },
-    { img: 'assets/leaf-3.png', left: 56.18, width: 27.64, amp: '1.7deg',  dur: '10.5s', delay: '-4.6s' },
-    { img: 'assets/leaf-4.png', left: 76.18, width: 23.82, amp: '1.45deg', dur: '8.8s',  delay: '-2.3s' },
+    { img: 'assets/leaf-left.png',  left: 0,     width: 67.71, amp: '1.4deg', dur: '9.5s', delay: '0s' },
+    { img: 'assets/leaf-right.png', left: 67.71, width: 32.29, amp: '1.9deg', dur: '7.2s', delay: '-3.5s' },
   ];
   const layer = document.createElement('div');
   layer.className = 'about-leaves';
