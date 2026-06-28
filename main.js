@@ -1,5 +1,12 @@
 // Laze homepage — small progressive-enhancement helpers.
 
+// Clean URLs: links already point to extensionless paths (GitHub Pages serves
+// foo.html at /foo). If someone lands directly on a .html URL, tidy the bar.
+if (location.pathname.endsWith('.html')) {
+  const clean = location.pathname.replace(/\/index\.html$/, '/').replace(/\.html$/, '');
+  history.replaceState(null, '', clean + location.search + location.hash);
+}
+
 // ===== Global contact component =====
 // One source of truth for the contact form. Injected wherever a page has
 // <div data-contact></div>, before the form handler below runs.
