@@ -860,3 +860,22 @@ a { color: inherit; text-decoration: none; }
   .legal { padding: calc(var(--nav-offset, 110px) + 32px) var(--pad) 64px; }
   .legal h2 { margin-top: 36px; }
 }
+
+/* Cookie-table inside legal pages */
+.legal-table-wrap { overflow-x: auto; margin: 8px 0 20px; }
+.legal table { width: 100%; border-collapse: collapse; font-size: var(--body-sm); min-width: 520px; }
+.legal th, .legal td {
+  text-align: left;
+  padding: 12px 14px;
+  border-bottom: 1px solid rgba(172, 108, 88, 0.25);
+  vertical-align: top;
+}
+.legal thead th { font-weight: 700; border-bottom: 1.5px solid var(--rust); }
+.legal code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.9em;
+  background: rgba(172, 108, 88, 0.1);
+  padding: 1px 5px;
+  border-radius: 4px;
+  white-space: nowrap;
+}
