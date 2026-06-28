@@ -810,3 +810,53 @@ a { color: inherit; text-decoration: none; }
 /* Leading price-tag icon marking the shop nav items (furniture / fabrics).
    Inherits the nav link colour via currentColor (coral on dark, rust on light). */
 .nav-icon { flex: none; width: 16px; height: 16px; }
+
+/* ============================================================
+   Legal pages (Privacy Policy, etc.) — readable single column
+   on the light sage page, matching the sub-page chrome.
+   ============================================================ */
+.legal {
+  background: var(--sage);
+  color: var(--rust);
+  padding: calc(var(--nav-offset, 220px) + 24px) var(--pad) 96px;
+}
+.legal-inner { max-width: 760px; margin-inline: auto; }
+.legal-head { margin-bottom: 48px; }
+.legal-head .h2 { color: var(--rust); margin: 0; }
+.legal-meta {
+  margin: 14px 0 0;
+  font-size: var(--body-sm);
+  opacity: 0.75;
+}
+.legal h2 {
+  margin: 44px 0 14px;
+  font-size: var(--h6);
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+}
+.legal p {
+  margin: 0 0 16px;
+  font-size: var(--body);
+  line-height: 1.65;
+}
+.legal ul { margin: 0 0 16px; padding-left: 22px; }
+.legal li {
+  margin: 0 0 10px;
+  font-size: var(--body);
+  line-height: 1.6;
+}
+.legal ul ul { margin: 10px 0 4px; }
+.legal strong { font-weight: 700; }
+.legal a {
+  color: var(--rust);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+}
+.legal a:hover { opacity: 0.7; }
+
+@media (max-width: 720px) {
+  .legal { padding: calc(var(--nav-offset, 110px) + 32px) var(--pad) 64px; }
+  .legal h2 { margin-top: 36px; }
+}
