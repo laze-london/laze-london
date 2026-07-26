@@ -25,6 +25,10 @@ Navbar tone rule: **dusty pink `#E0A7AF` on the green homepage**, **muted pink `
   ```
 - When adding more icons, grab the SVG from Material Symbols (fill style), set `fill="currentColor"`, `aria-hidden="true"`.
 
+## Voice & tone
+- Never use em dashes (—) in copy. Use a comma, full stop, or parentheses instead.
+- Laze is a one-woman studio. Write in first person singular ("I"), never "we".
+
 ## Social
 - Instagram → https://www.instagram.com/laze.london/
 - LinkedIn → https://www.linkedin.com/in/hniven/
