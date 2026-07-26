@@ -18,9 +18,9 @@ dependencies — open `index.html` and it runs.
 ## Design tokens (from Figma)
 
 ```
---green #1B3620   dark forest (dark sections)
---coral #D8876E   terracotta (text on dark)
---rust  #AC6C58   warm brown (text on light)
+--green #2C3D32   dark forest (dark sections)
+--coral #E0A7AF   dusty pink (text on dark)
+--rust  #7F4B52   muted pink (text on light)
 --sage  #E0E5E0   light sage (light sections)
 Font: Fustat (Google Fonts)
 ```

@@ -5,12 +5,12 @@ Reference for building the **laze.london** site. Keep new work consistent with t
 ## Palette
 | Token | Hex | Use |
 |---|---|---|
-| `--green` | `#1B3620` | Dark forest — dark sections (homepage hero, navbar, footer) |
-| `--coral` | `#D8876E` | Terracotta — text/icons on dark backgrounds |
-| `--rust`  | `#AC6C58` | Warm brown — text/icons on light backgrounds |
+| `--green` | `#2C3D32` | Dark forest — dark sections (homepage hero, navbar, footer) |
+| `--coral` | `#E0A7AF` | Dusty pink — text/icons on dark backgrounds |
+| `--rust`  | `#7F4B52` | Muted pink — text/icons on light backgrounds (WCAG AA compliant, 5.4:1 on sage) |
 | `--sage`  | `#E0E5E0` | Light sage — light sections (shop, product, service pages) |
 
-Navbar tone rule: **coral `#D8876E` on the green homepage**, **rust `#AC6C58` on the light sub-pages** (`.navbar--light`).
+Navbar tone rule: **dusty pink `#E0A7AF` on the green homepage**, **muted pink `#7F4B52` on the light sub-pages** (`.navbar--light`).
 
 ## Typography
 - **Fustat** (Google Fonts), weights 400/500/600/700/800.
