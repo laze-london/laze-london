@@ -819,6 +819,10 @@ a { color: inherit; text-decoration: none; }
 .svc-feature__media { flex: 1 1 0; aspect-ratio: 644 / 687; overflow: hidden; background: #d9d7d1; }
 .svc-feature__media img { width: 100%; height: 100%; object-fit: cover; }
 
+.svc-testimonial { margin: 24px 0 0; padding-left: 24px; border-left: 3px solid var(--rust); }
+.svc-testimonial__quote { margin: 0 0 12px; font-size: var(--body); font-weight: 400; font-style: italic; line-height: 1.5; }
+.svc-testimonial__author { display: block; font-style: normal; font-size: var(--body-sm); font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; opacity: 0.8; }
+
 @media (max-width: 1024px) {
   .svc-hero { flex-direction: column; gap: 32px; min-height: 0; }
   .svc-hero-media__big { margin-top: 0; }
@@ -966,4 +970,25 @@ a { color: inherit; text-decoration: none; }
 
 @media (max-width: 480px) {
   .cc-banner { left: 16px; right: 16px; bottom: 16px; width: auto; max-width: none; }
+}
+
+/* ============ COMING SOON ============ */
+.coming-soon {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 40px;
+  padding: var(--pad);
+}
+.coming-soon-message {
+  font-size: var(--h6);
+  font-weight: 400;
+  line-height: 1.4;
+  letter-spacing: -0.01em;
+  color: var(--coral-soft);
+  max-width: 520px;
+  margin: 0;
 }
