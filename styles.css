@@ -744,6 +744,10 @@ a { color: inherit; text-decoration: none; }
 .gallery--four .gallery__thumb--drawing { grid-column: 2; grid-row: 1 / span 2; background: var(--green); }
 .gallery--four .gallery__thumb--drawing img { object-fit: contain; }
 
+/* Gallery with a single tall photo, shown whole at half width */
+.gallery--one { grid-template-columns: 1fr; }
+.gallery--one .gallery__main { aspect-ratio: 3 / 4; width: calc(50% - 8px); }
+
 /* Gallery with a wide main photo, four small photos and a drawing spanning the last column */
 .gallery--six .gallery__main { aspect-ratio: 4 / 3; }
 .gallery--six .gallery__thumbs { grid-template-columns: repeat(3, 1fr); grid-template-rows: 1fr 1fr; aspect-ratio: 4 / 3; }
@@ -768,6 +772,7 @@ a { color: inherit; text-decoration: none; }
 @media (max-width: 720px) {
   .pdp { padding: calc(var(--nav-offset, 110px) + 48px) var(--pad) 64px; }
   .gallery { grid-template-columns: 1fr; }
+  .gallery--one .gallery__main { width: 100%; }
   .gallery__thumbs { grid-template-columns: 1fr 1fr; }
 }
 
