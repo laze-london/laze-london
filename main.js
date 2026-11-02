@@ -120,40 +120,34 @@ if (toggle && navLinks) {
   );
 }
 
-// Services: reveal the preview image only while a service is hovered/focused,
-// swapping to that service's own picture. Hidden otherwise.
-const serviceImg = document.getElementById('serviceImg');
-const serviceMedia = document.querySelector('.services-media');
-const serviceList = document.querySelector('.services-list');
-document.querySelectorAll('.service').forEach((el) => {
-  const src = el.getAttribute('data-img');
-  if (!src || !serviceImg) return;
-  const show = () => {
-    serviceImg.src = src;
-    if (serviceMedia) serviceMedia.classList.add('is-visible');
-  };
-  el.addEventListener('mouseenter', show);
-  el.addEventListener('focus', show);
-});
-const hide = () => serviceMedia && serviceMedia.classList.remove('is-visible');
-if (serviceList) {
-  serviceList.addEventListener('mouseleave', hide);
-  serviceList.addEventListener('focusout', hide);
+
+// Shop order — available first, then reserved, then sold (keeps the order they were added within each group).
+const productGrid = document.querySelector('.product-grid');
+if (productGrid) {
+  const rank = { available: 0, reserved: 1, sold: 2 };
+  const items = [...productGrid.querySelectorAll('.product')];
+  items
+    .map((el, i) => ({ el, i, r: rank[el.getAttribute('data-status') || 'available'] ?? 0 }))
+    .sort((a, b) => a.r - b.r || a.i - b.i)
+    .forEach(({ el }) => productGrid.appendChild(el));
 }
 
 // Shop filters — show only products whose category matches the active tab.
 const filters = document.querySelectorAll('.filter');
 if (filters.length) {
   const products = document.querySelectorAll('.product');
-  filters.forEach((btn) => {
-    btn.addEventListener('click', () => {
-      const f = btn.getAttribute('data-filter');
-      filters.forEach((b) => b.classList.toggle('is-active', b === btn));
-      products.forEach((p) => {
-        p.hidden = !(f === 'all' || p.getAttribute('data-category') === f);
-      });
+  const applyFilter = (f) => {
+    filters.forEach((b) => b.classList.toggle('is-active', b.getAttribute('data-filter') === f));
+    products.forEach((p) => {
+      p.hidden = !(f === 'all' || p.getAttribute('data-category') === f);
     });
+  };
+  filters.forEach((btn) => {
+    btn.addEventListener('click', () => applyFilter(btn.getAttribute('data-filter')));
   });
+  // Arriving from a piece's breadcrumb (e.g. furniture#drawers) opens that tab.
+  const fromLink = decodeURIComponent(location.hash.slice(1));
+  if (fromLink && [...filters].some((b) => b.getAttribute('data-filter') === fromLink)) applyFilter(fromLink);
 }
 
 // Product page: tabs (Details / Shipping / Returns)
