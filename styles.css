@@ -747,6 +747,7 @@ a { color: inherit; text-decoration: none; }
 /* Gallery with a single tall photo, shown whole at half width */
 .gallery--one { grid-template-columns: 1fr; }
 .gallery--one .gallery__main { aspect-ratio: 3 / 4; width: calc(50% - 8px); }
+.gallery--one.gallery--landscape .gallery__main { aspect-ratio: 4 / 3; }
 
 /* Gallery with a wide main photo, four small photos and a drawing spanning the last column */
 .gallery--six .gallery__main { aspect-ratio: 4 / 3; }
