@@ -744,6 +744,14 @@ a { color: inherit; text-decoration: none; }
 .gallery--four .gallery__thumb--drawing { grid-column: 2; grid-row: 1 / span 2; background: var(--green); }
 .gallery--four .gallery__thumb--drawing img { object-fit: contain; }
 
+/* Gallery with a wide main photo, four small photos and a drawing spanning the last column */
+.gallery--six .gallery__main { aspect-ratio: 4 / 3; }
+.gallery--six .gallery__thumbs { grid-template-columns: repeat(3, 1fr); grid-template-rows: 1fr 1fr; aspect-ratio: 4 / 3; }
+.gallery--six .gallery__thumb { min-height: 0; }
+.gallery--six .gallery__thumb img { position: absolute; inset: 0; }
+.gallery--six .gallery__thumb--drawing { grid-column: 3; grid-row: 1 / span 2; background: var(--green); }
+.gallery--six .gallery__thumb--drawing img { object-fit: contain; }
+
 /* Wide (landscape) product photo on the shop grid: show the whole piece */
 .product__media--wide { display: flex; align-items: center; }
 .product__media--wide img { height: auto; object-fit: contain; }
